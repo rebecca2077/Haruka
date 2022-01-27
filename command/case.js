@@ -495,7 +495,21 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 break
 case 'owner':{
 	if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-			reply('No Info')
+		const ownerContact = [ownernumber, "", "", "", "", "", "", "", "", "", "" , "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+		let ini_list = []
+		for (let i of ownerContact.map(v => v + '@s.whatsapp.net')) {
+			const vname = haruka.contacts[i] != undefined ? haruka.contacts[i].vname || haruka.contacts[i].notify : undefined
+			ini_list.push({
+				"displayName": `${ownername}`,
+				"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:${vname}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+				})
+				}
+				hehe = await haruka.sendMessage(from, {
+					"displayName": `${ini_list.length} kontak`,
+					"contacts": ini_list 
+					}, 'contactsArrayMessage', { quoted: mek })
+					haruka.sendMessage(from, `Nih Kak Contact Owner Ku, Cuma Sv Nomor Cewe Ya 🤝`, text, {quoted: hehe})
+				}
 			break
 case 'sticker':case 'stiker':case 'stickergif':case 'stikergif':case 'sgif':case 's':
 if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
