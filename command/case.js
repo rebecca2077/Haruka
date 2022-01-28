@@ -491,7 +491,7 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 				break
 case 'infobot':
 if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-			reply('Update bot selanjutnya silahkan cek YouTube zeeone ofc')
+//			reply('Update bot selanjutnya silahkan cek YouTube zeeone ofc')
 break
 case 'owner':{
 	if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
@@ -505,8 +505,8 @@ case 'owner':{
 				})
 				}
 				hehe = await haruka.sendMessage(from, {
-					"displayName": `${ini_list.length} kontak`,
-					"contacts": ini_list 
+//					"displayName": `${ini_list.length} kontak`,
+//					"contacts": ini_list 
 					}, 'contactsArrayMessage', { quoted: mek })
 					haruka.sendMessage(from, `Nih Kak Contact Owner Ku, Cuma Sv Nomor Cewe Ya 🤝`, text, {quoted: hehe})
 				}
